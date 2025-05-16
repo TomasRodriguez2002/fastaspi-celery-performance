@@ -12,12 +12,12 @@ El objetivo es simular un escenario donde una API debe procesar múltiples tarea
 - **Docker / Docker Compose**: Para orquestar y aislar los servicios.
 
 ## ⚙️ Arquitectura
-
+```
 +----------------+       +----------------+      +----------------+
 |  FastAPI App   |  ---> |     Redis      | ---> | Celery Worker  |
 | (fastapi_app)  |       |    (redis)     |      |(celery_worker) |
 +----------------+       +----------------+      +----------------+
-
+```
 
 - **FastAPI App** expone endpoints REST para ejecutar las tareas.
 - **Redis** actúa como intermediario, gestionando el estado y la cola de tareas.
